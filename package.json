@@ -1,0 +1,34 @@
+{
+  "name": "srph-playwright-testframework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test-api": "npx playwright test template_api",
+    "test-dev": "ENV=DEV npx playwright test",
+    "test-stg": "ENV=STG npx playwright test",
+    "test-prd": "ENV=PRD npx playwright test",
+    "test-smoke": "npx playwright test --grep @smoke",
+    "test-chrome": "npx playwright test --project=Chrome",
+    "test-one": "npx playwright test template_dd",
+    "test-record": "npx playwright codegen",
+    "show-trace": "npx playwright show-trace",
+    "report": "npx playwright show-report",
+    "allure-clean": "rm -r reports/allure-results",
+    "allure-report": "npx allure generate ./reports/allure-results --clean && npx allure open ./allure-report"
+  },
+  "keywords": [],
+  "author": "Mark Angelo M. Remos",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7",
+    "allure-commandline": "^2.29.0",
+    "allure-playwright": "^2.15.1"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5"
+  }
+}
